@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Головна</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='main.css') }}"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        {% if user %}
+        <span>Привіт, {{ user }}!</span>
+        <a href="{{ url_for('logout') }}">Вийти</a>
+        {% else %}
+        <a href="{{ url_for('login') }}">Увійти</a> |
+        <a href="{{ url_for('register') }}">Реєстрація</a>
+        {% endif %}
+      </header>
+
+      <h1>Пости</h1>
+      {% if user %}
+      <a href="{{ url_for('add_post_route') }}" class="add-post-btn"
+        >➕ Додати пост</a
+      >
+      {% endif %}
+
+      <ul>
+        {% for post in posts %}
+        <li>
+          <b>{{ post.title }}</b><br />
+          {{ post.content }}<br />
+          <i>Автор: {{ post.author }}</i><br />
+
+          {% if user == post.author %}
+          <a href="{{ url_for('edit_post', post_id=post.id) }}">✏️ Редагувати</a> |
+          <a href="{{ url_for('delete_post', post_id=post.id) }}" onclick="return confirm('Видалити пост?')">🗑️ Видалити</a>
+          {% endif %}
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </body>
+</html>
+

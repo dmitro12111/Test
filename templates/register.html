@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Реєстрація</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='auth.css') }}">
+</head>
+<body>
+    <div class="auth-container">
+        <h2>📝 Реєстрація</h2>
+        <form method="POST">
+            <label>Ім’я користувача</label>
+            <input type="text" name="username" placeholder="Введіть логін" required>
+
+            <label>Пароль</label>
+            <input type="password" name="password" placeholder="Введіть пароль" required>
+
+            <button type="submit">Зареєструватися</button>
+        </form>
+
+        <p>Вже маєте акаунт? <a href="{{ url_for('login') }}">Увійти</a></p>
+    </div>
+</body>
+</html>

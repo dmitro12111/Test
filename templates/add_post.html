@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Додати пост</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='add_post.css') }}">
+</head>
+<body>
+    <div class="add-post-container">
+        <h2>📝 Додати новий пост</h2>
+        <form method="POST">
+            <input type="text" name="title" placeholder="Заголовок поста" required>
+            <textarea name="content" placeholder="Текст поста..." required></textarea>
+            <button type="submit" class="btn add-btn">✅ Опублікувати</button>
+        </form>
+        <form action="{{ url_for('index') }}">
+            <button type="submit" class="btn back-btn">⬅ Назад</button>
+        </form>
+    </div>
+</body>
+</html>

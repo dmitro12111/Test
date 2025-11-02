@@ -1,0 +1,165 @@
+/* === Основні стилі === */
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #f4f4f8;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+.container {
+  max-width: 700px;
+  margin: 50px auto;
+  background: #fff;
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* === Верхня панель === */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  font-size: 16px;
+}
+
+header a {
+  text-decoration: none;
+  color: #007bff;
+  transition: 0.3s;
+}
+
+header a:hover {
+  color: #0056b3;
+}
+
+/* === Заголовки === */
+h1 {
+  text-align: center;
+  color: #222;
+  margin-bottom: 20px;
+}
+
+/* === Кнопка "Додати пост" === */
+.add-post-btn {
+  display: inline-block;
+  background: #007bff;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.3s;
+  margin-bottom: 20px;
+}
+
+.add-post-btn:hover {
+  background: #0056b3;
+}
+
+/* === Список постів === */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  background: #fafafa;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 15px 20px;
+  margin-bottom: 15px;
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+
+li:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+/* === Автор поста === */
+i {
+  color: #666;
+  font-size: 14px;
+}
+
+/* === Кнопки редагування/видалення === */
+li a {
+  display: inline-block;
+  margin-top: 8px;
+  font-size: 15px;
+  text-decoration: none;
+  padding: 5px 10px;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+li a[href*="edit"] {
+  background: #ffb703;
+  color: #fff;
+}
+
+li a[href*="edit"]:hover {
+  background: #f29b00;
+}
+
+li a[href*="delete"] {
+  background: #e63946;
+  color: #fff;
+}
+
+li a[href*="delete"]:hover {
+  background: #c9182a;
+}
+
+/* === Форма редагування === */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+input[type="text"],
+textarea {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 15px;
+  transition: border-color 0.3s;
+}
+
+input[type="text"]:focus,
+textarea:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+button {
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: #0056b3;
+}
+
+/* === Посилання "Повернутись" === */
+a[href*="index"] {
+  display: inline-block;
+  margin-top: 15px;
+  color: #007bff;
+  text-decoration: none;
+}
+
+a[href*="index"]:hover {
+  text-decoration: underline;
+}
